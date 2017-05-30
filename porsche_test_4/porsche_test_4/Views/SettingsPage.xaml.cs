@@ -11,10 +11,25 @@ namespace porsche_test_4.Views
 {
     public partial class SettingsPage : ContentPage
     {
+        private readonly SettingsViewModel _viewModel;
+
+        private bool report = false;
+
         public SettingsPage()
         {
             InitializeComponent();
-            this.BindingContext = new SettingsViewModel();
+            _viewModel = new SettingsViewModel(this);
+            BindingContext = _viewModel;
+        }
+
+        protected override async void OnAppearing()
+        {
+            if (report == false)
+            {
+                base.OnAppearing();
+                await _viewModel.SettingsAsync();
+                report = true;
+            }
         }
     }
 }

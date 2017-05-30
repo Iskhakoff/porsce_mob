@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using porsche_test_4.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -59,21 +60,51 @@ namespace porsche_test_4.Services
             return await PostAsync("/auth.php", json.ToString());
         }
 
-        public async Task<RatingModel> RatingAsync()
+        public async Task<ObservableCollection<RatingModel>> RatingAsync()
         {
             try
             {
-                var json = await _httpClient.GetStringAsync(new Uri($"{_baseUrl}/dillers.php"));
-                var jObj = JObject.Parse(json);
-                return JsonConvert.DeserializeObject<List<RatingModel>>(jObj["Ratings"].ToString());
-
-                //return await _httpClient.GetStringAsync($"{_baseUrl}/reports.php");
+                var response = await _httpClient.PostAsync($"{_baseUrl}/reports.php", new StringContent("", Encoding.UTF8, "application/json"));
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var responseJson = JsonConvert.DeserializeObject<ObservableCollection<RatingModel>>(responseBody);
+                return responseJson;
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
-                return new List<RatingModel>();
-                //return e.Message;
+                return new ObservableCollection<RatingModel>();
+            }
+        }
+
+        public async Task<ObservableCollection<ReportModel>> ReportAsync(int id_report)
+        {
+            try
+            {
+                var response = await _httpClient.PostAsync($"{_baseUrl}/report.php?id={id_report}", new StringContent("", Encoding.UTF8, "application/json"));
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var responseJson = JsonConvert.DeserializeObject<ObservableCollection<ReportModel>>(responseBody);
+                return responseJson;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+                return new ObservableCollection<ReportModel>();
+            }
+        }
+
+        public async Task<ObservableCollection<SettingsModel>> SettingsAsync()
+        {
+            try
+            {
+                var response = await _httpClient.PostAsync($"{_baseUrl}/dillers.php", new StringContent("", Encoding.UTF8, "application/json"));
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var responseJson = JsonConvert.DeserializeObject<ObservableCollection<SettingsModel>>(responseBody);
+                return responseJson;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+                return new ObservableCollection<SettingsModel>();
             }
         }
     }

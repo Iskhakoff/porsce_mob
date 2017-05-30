@@ -1,4 +1,5 @@
-﻿using porsche_test_4.ViewModels;
+﻿using porsche_test_4.Models;
+using porsche_test_4.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,21 +14,29 @@ namespace porsche_test_4.Views
     {
         private readonly RatingViewModel _viewModel;
 
+        private bool report = false;
+
         public RatingPage()
         {
             InitializeComponent();
             _viewModel = new RatingViewModel(this);
             BindingContext = _viewModel;
         }
-        //public void picker_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    header.Text = "Регион: " + picker.Items[picker.SelectedIndex];
-        //}
 
         protected override async void OnAppearing()
         {
-            base.OnAppearing();
-            await _viewModel.RatingAsync();
+            if (report == false)
+            {
+                base.OnAppearing();
+                await _viewModel.RatingAsync();
+                report = true;
+            }
+        }
+
+        private async void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var id = ((RatingModel)e.Item).id_report;
+            await _viewModel.OpenReport(id);
         }
     }
 

@@ -1,5 +1,4 @@
-﻿using Java.IO;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using porsche_test_4.Models;
 using porsche_test_4.Services;
 using porsche_test_4.Views;
@@ -19,29 +18,21 @@ namespace porsche_test_4.ViewModels
     public class RatingViewModel : ContentView
     {
         public ObservableCollection<RatingModel> Ratings { get; set; } = new ObservableCollection<RatingModel>();
-        //{
-        //    new RatingModel
-        //    {
-        //        FullTitle = "БорисХофф",
-        //        Rat = "9.1",
-
-
-        //    },
-        //};
 
         public async Task RatingAsync()
         {
             var dataService = DataService.GetInstance();
             var rating = await dataService.RatingAsync();
-            //var ratings = JsonConvert.DeserializeObject<List<RatingModel>>(rating);
 
             foreach (var rat in rating)
             {
-                
+                Ratings.Add(rat);
             }
         }
 
         private Page _page;
+
+        public ICommand RefreshContacts { get; set; }
 
         public ICommand OpenProfile { get; set; }
 
@@ -54,12 +45,24 @@ namespace porsche_test_4.ViewModels
                 await _page.Navigation.PushAsync(new SettingsPage());
                 });
             OpenLog = new Command(WayOut);
+            RefreshContacts = new Command (Refresh);
         }
 
+        private async void Refresh()
+        {
+            await _page.Navigation.PushAsync(new RatingPage());
+            _page.Navigation.RemovePage(_page);
+        }
         private void WayOut()
         {
             var app = (App)Application.Current;
             app.MainPage = new NavigationPage(new LoginPage());
+        }
+
+        public async Task OpenReport (int id_report)
+        {
+
+            await _page.Navigation.PushAsync(new ReportPage(id_report));
         }
     }
     
