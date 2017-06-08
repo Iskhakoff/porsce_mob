@@ -1,2 +1,0 @@
-C:\Users\Дмитрий\Desktop\porsche_test_4 — копия\porsche_test_4\porsche_test_4.Windows\porsche_test_4.Windows.csproj;neutral
-C:\Users\Дмитрий\Desktop\porsche_test_4 — копия\porsche_test_4\porsche_test_4\porsche_test_4.csproj;neutral

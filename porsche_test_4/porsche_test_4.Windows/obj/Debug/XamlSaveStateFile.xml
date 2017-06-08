@@ -1,11 +1,10 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\дмитрий\desktop\porsche_test_4 — копия\porsche_test_4\porsche_test_4.windows\obj\debug\intermediatexaml\porsche_test_4.windows.exe" HashGuid="f9533d79-d877-5328-243e-72912dcd703f" />
-    <ReferenceAssembly PathName="c:\users\дмитрий\desktop\por\porsche_test_4\porsche_test_4\bin\debug\porsche_test_4.dll" HashGuid="ac61f66b-c375-d0cf-d57c-79baebaffc38" />
-    <ReferenceAssembly PathName="c:\users\дмитрий\desktop\por\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.core.dll" HashGuid="c782f70f-077f-7e2d-5bd4-f6b5da067f8a" />
-    <ReferenceAssembly PathName="c:\users\дмитрий\desktop\por\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
-    <ReferenceAssembly PathName="c:\users\дмитрий\desktop\por\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.winrt.dll" HashGuid="fe4acc44-27ba-0e4e-a08b-26ae7dccb678" />
-    <ReferenceAssembly PathName="c:\users\дмитрий\desktop\por\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.winrt.tablet.dll" HashGuid="6cda1a83-1d8e-d2d4-211d-d5f3a06554ab" />
-    <ReferenceAssembly PathName="c:\users\дмитрий\desktop\por\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.xaml.dll" HashGuid="964969a0-caee-7d9d-82cd-9d1d01056ded" />
+    <ReferenceAssembly PathName="c:\users\дмитрий\porsce_mob\porsche_test_4\porsche_test_4\bin\debug\porsche_test_4.dll" HashGuid="0b192780-ce37-fb69-ccfe-e0ffe7c65076" />
+    <ReferenceAssembly PathName="c:\users\дмитрий\porsce_mob\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.core.dll" HashGuid="c782f70f-077f-7e2d-5bd4-f6b5da067f8a" />
+    <ReferenceAssembly PathName="c:\users\дмитрий\porsce_mob\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.dll" HashGuid="6b938cd4-44c0-2618-7eb6-4caa3f482076" />
+    <ReferenceAssembly PathName="c:\users\дмитрий\porsce_mob\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.winrt.dll" HashGuid="fe4acc44-27ba-0e4e-a08b-26ae7dccb678" />
+    <ReferenceAssembly PathName="c:\users\дмитрий\porsce_mob\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.platform.winrt.tablet.dll" HashGuid="6cda1a83-1d8e-d2d4-211d-d5f3a06554ab" />
+    <ReferenceAssembly PathName="c:\users\дмитрий\porsce_mob\packages\xamarin.forms.2.3.3.180\lib\win81\xamarin.forms.xaml.dll" HashGuid="964969a0-caee-7d9d-82cd-9d1d01056ded" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

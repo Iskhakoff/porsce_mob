@@ -32,7 +32,13 @@
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                   <Label Text="{Binding site}"  FontSize="Medium"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+          <Label Text="{Binding code}"  FontSize="Medium"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+          <Label Text="{Binding manager}"  FontSize="Medium"/>
+        </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Margin="0,0,0,20">
                   <BoxView HeightRequest="1" BackgroundColor="#d9d9d9" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
       </StackLayout>

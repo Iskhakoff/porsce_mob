@@ -12,5 +12,7 @@ namespace porsche_test_4.Models
         public string address { get; set; }
         public string telephone { get; set; }
         public string site { get; set; }
+        public string code { get; set; }
+        public string manager { get; set; }
     }
 }
